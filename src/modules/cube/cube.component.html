@@ -1,0 +1,8 @@
+<div class="app-cube" [ngStyle]="{'color': color}" (click)="update($event)">
+  <div class="text">
+    <ng-content select=".c`
+    "></ng-content>
+    <ng-content select=".cube__test"></ng-content>
+    <ng-content select="*"></ng-content>
+  </div>
+</div>
