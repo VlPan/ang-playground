@@ -8,3 +8,11 @@
 <app-cube [color]="cubeColor" (updated)="cubeUpdated($event)">
   <app-checkbox (checked)="checkCube($event)"></app-checkbox>
 </app-cube>
+
+<button (click)="moveCube()">Move it!!!</button>
+
+<div #cubeContainer></div>
+
+<ng-template #tmpl>
+  VLPan
+</ng-template>

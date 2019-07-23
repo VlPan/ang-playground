@@ -10,6 +10,9 @@ import { CubeComponent } from './cube.component';
   declarations: [CubeComponent, MessageComponent],
   exports: [
     CubeComponent
+  ],
+  entryComponents: [
+    CubeComponent
   ]
 })
 export class CubeModule { }

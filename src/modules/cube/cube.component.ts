@@ -1,6 +1,6 @@
 import { MessageComponent } from './message/message.component';
 import { CheckboxComponent } from './../../components/checkbox/checkbox.component';
-import { Component, OnInit, Input, Output, EventEmitter, AfterContentInit, ContentChild, ContentChildren, QueryList, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterContentInit, ContentChild, ContentChildren, QueryList, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-cube',
@@ -15,6 +15,7 @@ export class CubeComponent implements OnInit, AfterContentInit, AfterViewInit {
   @Output() updated: EventEmitter<any> = new EventEmitter();
   @ContentChildren(CheckboxComponent) checkbox: QueryList<CheckboxComponent>;
   @ViewChild(MessageComponent) message: MessageComponent
+  @ViewChild('text') textDiv: ElementRef;
 
   constructor() { }
 
@@ -22,19 +23,17 @@ export class CubeComponent implements OnInit, AfterContentInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log(this.textDiv);
     setTimeout(() => {
       this.message.message = 'NEW MESSAGE'
     })
   }
 
   ngAfterContentInit() {
-    
-    console.log(this.checkbox);
-
     this.checkbox.forEach(element => {
       element.checked.subscribe((isChecked) => {
         this.color = isChecked ? 'red': 'blue';
-      })
+      });
     });
   }
 
