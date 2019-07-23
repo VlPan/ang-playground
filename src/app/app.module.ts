@@ -1,3 +1,4 @@
+import { CheckboxComponent } from './../components/checkbox/checkbox.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +9,8 @@ import { CubeModule } from 'modules/cube/cube.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,

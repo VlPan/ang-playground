@@ -3,10 +3,8 @@
     HEADER
     <h1>1</h1>
   </div>
-  <div class="cube__test">
-    TEXT
-  </div>
+  <app-checkbox (checked)="checkCube($event)"></app-checkbox>
 </app-cube>
-<app-cube [color]="'blue'" (updated)="cubeUpdated($event)">
-  <h1>Hello world</h1>
+<app-cube [color]="cubeColor" (updated)="cubeUpdated($event)">
+  <app-checkbox (checked)="checkCube($event)"></app-checkbox>
 </app-cube>

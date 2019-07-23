@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  cubeColor = 'blue';
 
   cubeUpdated($event) {
     const {isUpdated, event} = $event;
+  }
+
+  checkCube($event) {
+    this.cubeColor = $event ? 'violet' : 'blue';
+    console.log('isChecked', $event);
   }
 }
